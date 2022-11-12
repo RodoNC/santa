@@ -24,7 +24,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#animation
-	print(velocity.x)
 	if velocity.length() < 200:
 		if velocity.x < 100:
 			player.play("idle")
