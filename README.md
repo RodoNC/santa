@@ -1,3 +1,3 @@
 # santa
-###Sant godot game
-![Alt text] (https://github.com/RodoNC/santa/blob/main/Sprites/santa_Sheet.png?raw=true)
+
+![Alt text](https://github.com/RodoNC/santa/blob/main/Sprites/santa_Sheet.png?raw=true)
