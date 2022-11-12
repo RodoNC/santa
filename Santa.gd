@@ -19,16 +19,6 @@ func _ready():
 	pass # Replace with function body.
 
 
-func get_input():
-	var dir = 0
-	if Input.is_action_pressed("walk_right"):
-		dir += 1
-	if Input.is_action_pressed("walk_left"):
-		dir -= 1
-	if dir != 0:
-		velocity.x = lerp(velocity.x, dir * speed, acceleration)
-	else:
-		velocity.x = lerp(velocity.x, 0, friction)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -54,7 +44,18 @@ func _process(delta):
 
 
 func _physics_process(delta):
-	get_input()
+	var dir = 0
+	if Input.is_action_pressed("walk_right"):
+		dir += 1
+	if Input.is_action_pressed("walk_left"):
+		dir -= 1
+	if dir != 0:
+		velocity.x = lerp(velocity.x, dir * speed, acceleration)
+	elif abs(velocity.x) < 5:
+		velocity.x = 0.0
+	else:
+		velocity.x = lerp(velocity.x, 0, friction)
+	
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
