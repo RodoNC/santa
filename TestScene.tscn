@@ -18,11 +18,11 @@ current = true
 margin_left = -299.0
 margin_top = -262.0
 margin_right = -259.0
-margin_bottom = -248.0
+margin_bottom = -246.0
 
 [node name="PTimer" type="Label" parent="Camera2D"]
 margin_left = -249.0
-margin_top = -260.0
+margin_top = -262.0
 margin_right = -209.0
 margin_bottom = -246.0
 

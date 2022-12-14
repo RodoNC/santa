@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+const laserPath = preload("res://laser.tscn")
 
 onready var  player = $AnimationPlayer
 
@@ -52,6 +53,8 @@ func _process(delta):
 	
 	#time dilation
 	ptime += delta * inv_gamma
+	
+	
 
 
 
@@ -85,10 +88,20 @@ func _physics_process(delta):
 	
 
 	#limit velocity to speed of light
-	velocity = velocity.limit_length(lspeed)
+	velocity = velocity.limit_length(nlspeed)
 	
 
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
+	#shooty
+	if Input.is_action_just_pressed("shoot"):
+		shoot()
 	
-
+	
+func shoot():
+	var laser = laserPath.instance()
+	
+	get_parent().add_child(laser)
+	laser.position = $Node2D/LaserPoint.global_position
+	laser.velocity = get_global_mouse_position() - laser.position
+	laser.rotation = (get_global_mouse_position() - laser.position).angle()
