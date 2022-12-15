@@ -1,7 +1,7 @@
 extends Node2D
 
-onready var timer = $Camera2D/Timer
-onready var ptimer = $Camera2D/PTimer
+onready var timer = $Santa/Camera2D/Timer
+onready var ptimer = $Santa/Camera2D/PTimer
 onready var player = $Santa
 var time = 0
 # Declare member variables here. Examples:

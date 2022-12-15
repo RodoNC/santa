@@ -10,24 +10,10 @@ extents = Vector2( 6273.5, 130 )
 [node name="TestScene" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 544, 214 )
-current = true
-
-[node name="Timer" type="Label" parent="Camera2D"]
-margin_left = -299.0
-margin_top = -262.0
-margin_right = -259.0
-margin_bottom = -246.0
-
-[node name="PTimer" type="Label" parent="Camera2D"]
-margin_left = -249.0
-margin_top = -262.0
-margin_right = -209.0
-margin_bottom = -246.0
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 522, 564 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D"]
 scale = Vector2( 25, 4.23 )
@@ -41,3 +27,17 @@ shape = SubResource( 1 )
 position = Vector2( 544, 214 )
 speed = 700
 acceleration = 0.418
+
+[node name="Camera2D" type="Camera2D" parent="Santa"]
+
+[node name="Timer" type="Label" parent="Santa/Camera2D"]
+margin_left = -299.0
+margin_top = -262.0
+margin_right = -259.0
+margin_bottom = -246.0
+
+[node name="PTimer" type="Label" parent="Santa/Camera2D"]
+margin_left = -249.0
+margin_top = -262.0
+margin_right = -209.0
+margin_bottom = -246.0

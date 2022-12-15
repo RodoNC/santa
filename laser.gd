@@ -11,3 +11,7 @@ func _ready():
 
 func _physics_process(delta):
 	var collision_info = move_and_collide(velocity.normalized() * delta * speed)
+	
+	#delete on collision
+	if collision_info:
+		queue_free()
