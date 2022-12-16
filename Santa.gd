@@ -6,7 +6,7 @@ onready var  player = $AnimationPlayer
 
 export (int) var lspeed = 2000
 export (int) var nlspeed = 1999
-export (int) var speed = 180
+export (int) var speed = 80
 export (int) var jump_speed = -400
 export (int) var gravity = 2000
 
@@ -53,11 +53,6 @@ func _process(delta):
 	
 	#time dilation
 	ptime += delta * inv_gamma
-	
-	
-
-
-
 
 
 func _physics_process(delta):
@@ -86,18 +81,16 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = jump_speed
 	
-
 	#limit velocity to speed of light
 	velocity = velocity.limit_length(nlspeed)
 	
-
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 	#shooty
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
-	
-	
+
+
 func shoot():
 	var laser = laserPath.instance()
 	

@@ -14,4 +14,6 @@ func _physics_process(delta):
 	
 	#delete on collision
 	if collision_info:
+		if collision_info.collider.has_method("die"):
+			collision_info.collider.die()
 		queue_free()
